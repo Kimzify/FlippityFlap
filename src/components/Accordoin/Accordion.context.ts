@@ -1,2 +1,7 @@
 import { createContext } from "react";
-export const AccordionContext = createContext({ expanded: false });
+import type { AccordionContextProps } from "./Accordion.types";
+
+export const AccordionContext = createContext<AccordionContextProps>({
+  expandKeys: [],
+  onExpand: () => {},
+});

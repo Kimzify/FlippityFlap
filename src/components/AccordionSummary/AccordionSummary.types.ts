@@ -1,8 +1,8 @@
-import type { ReactNode } from "react";
+import type { ComponentProps, ReactNode } from "react";
 
-export type AccordionSummaryBaseProps = {
-  expandIcon?: ReactNode;
+export type AccordionSummaryBaseProps = ComponentProps<"div"> & {
   children: ReactNode;
+  expanded: boolean;
 };
 
 export type IconStyledProps = {

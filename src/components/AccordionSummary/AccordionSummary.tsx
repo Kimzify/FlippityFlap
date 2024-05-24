@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import {
   StyledAccordionSummary,
   StyledSummary,
@@ -6,22 +5,18 @@ import {
 } from "./AccordionSummary.styled";
 import type { AccordionSummaryBaseProps } from "./AccordionSummary.types";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { AccordionContext } from "../Accordoin/Accordion.context";
+import { memo } from "react";
 
 const AccordionSummary = ({
   children,
-  expandIcon,
+  expanded,
 }: AccordionSummaryBaseProps) => {
-  const { expanded } = useContext(AccordionContext);
-
   return (
     <StyledAccordionSummary>
       <StyledSummary>{children}</StyledSummary>
-      <StyledIcon expanded={expanded}>
-        {expandIcon || <KeyboardArrowDownIcon />}
-      </StyledIcon>
+      <StyledIcon expanded={expanded}>{<KeyboardArrowDownIcon />}</StyledIcon>
     </StyledAccordionSummary>
   );
 };
 
-export default AccordionSummary;
+export default memo(AccordionSummary);

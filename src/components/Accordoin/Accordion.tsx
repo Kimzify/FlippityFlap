@@ -1,31 +1,32 @@
 import { AccordionContext } from "./Accordion.context";
-import {
-  StyledAccordion,
-  StyledDetailWrapper,
-  StyledSummaryWrapper,
-} from "./Accordion.styled";
+import { StyledAccordion } from "./Accordion.styled";
 import type { AccordionBaseProps } from "./Accordion.types";
-import { Children, useState } from "react";
+import { useMemo, useState } from "react";
 
-const Accordion = ({ children: childrenProp }: AccordionBaseProps) => {
-  const [isExpanded, setIsExpanded] = useState<boolean>(false);
-  const [summary, ...children] = Children.toArray(childrenProp);
+const Accordion = ({ children }: AccordionBaseProps) => {
+  const [expandKeys, setExpandKeys] = useState<string[]>([]);
 
-  const onExpandAccordion = () => {
-    setIsExpanded((prev) => !prev);
+  const onExpandAccordion = (key: string) => {
+    if (expandKeys.indexOf(key) !== -1) {
+      setExpandKeys((prev) => {
+        const next = [...prev];
+        next.splice(next.indexOf(key), 1);
+        return next;
+      });
+    } else {
+      setExpandKeys((prev) => [...prev, key]);
+    }
   };
 
+  const value = useMemo(
+    () => ({ expandKeys: expandKeys, onExpand: onExpandAccordion }),
+    [expandKeys]
+  );
+  
   return (
-    <StyledAccordion>
-      <StyledSummaryWrapper onClick={onExpandAccordion}>
-        <AccordionContext.Provider value={{ expanded: isExpanded }}>
-          {summary}
-        </AccordionContext.Provider>
-        <StyledDetailWrapper expanded={isExpanded}>
-          <div style={{ overflow: "hidden" }}>{children}</div>
-        </StyledDetailWrapper>
-      </StyledSummaryWrapper>
-    </StyledAccordion>
+    <AccordionContext.Provider value={value}>
+      <StyledAccordion>{children}</StyledAccordion>
+    </AccordionContext.Provider>
   );
 };
 
