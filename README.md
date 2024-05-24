@@ -1,13 +1,12 @@
 # Project Title
 
-Brief description of your project and its purpose.
+Simple Accordion
 
 ## Table of Contents
 
 - [Project Title](#project-title)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
-  - [Features](#features)
   - [Technologies Used](#technologies-used)
   - [Setup and Installation](#setup-and-installation)
   - [Testing](#testing)
@@ -16,24 +15,13 @@ Brief description of your project and its purpose.
 
 ## Introduction
 
-Provide a detailed introduction to the project. Explain what problem it solves and why it is useful.
-
-## Features
-
-List the main features of the project:
-- Feature 1: Description
-- Feature 2: Description
-- Feature 3: Description
-
 ## Technologies Used
 
 Mention the technologies and frameworks used in the project:
 - React
-- Redux (if applicable)
-- Axios (or Fetch API)
-- CSS/SCSS
+- Storybook
+- Emotion
 - Jest (for testing)
-- Any other libraries or tools
 
 ## Setup and Installation
 
@@ -55,12 +43,16 @@ Step-by-step instructions to set up the project locally:
     
     http://localhost:3000
     
+4. Start the Storybook:
+    
+    npm run storybook
+
 
 ## Testing
 
 1. Run the tests:
     
-    npm test
+    npm run test
     
 
 Provide an overview of the testing framework and approach used.
@@ -75,7 +67,7 @@ You can access the live version of the application here:
 ## Further Improvements
 
 List areas where the project could be improved:
-- Feature Enhancements: Describe potential features that could be added.
-- Performance Optimization: Explain any performance improvements that could be made.
-- Code Refactoring: Mention any areas of the codebase that could be cleaned up or refactored.
-- Testing Coverage: Suggest areas where more tests could be added to increase coverage.
+- add more props
+- writing tests
+- publishing on npm registery
+- improve documentation
