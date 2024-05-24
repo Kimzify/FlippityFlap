@@ -1,5 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
+import type { Meta } from "@storybook/react";
 import Accordion from "./Accordion";
 import AccordoinItem from "../AccordoinItem/AccordoinItem";
 import AccordionDetails from "../AccordionDetails";
@@ -7,7 +6,7 @@ import AccordionDetails from "../AccordionDetails";
 const meta = {
   title: "Accordion",
   component: Accordion,
-  render: (args, { globals: { locale } }) => (
+  render: (args) => (
     <Accordion {...args}>
       <AccordoinItem summary="Octapus Random Facts 🐙" itemKey="1">
         <AccordionDetails>
@@ -37,17 +36,18 @@ const meta = {
   parameters: {
     layout: "centered",
   },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ["autodocs"],
-  argTypes: {
-    // backgroundColor: { control: "color" },
-  },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: {},
+  // // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
+  // tags: ["autodocs"],
+  // argTypes: {
+  //   // backgroundColor: { control: "color" },
+  // },
+  // // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
+  // args: {},
 } satisfies Meta<typeof Accordion>;
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+
+// type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary = {};
