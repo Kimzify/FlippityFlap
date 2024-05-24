@@ -1,10 +1,10 @@
-# Project Title
+# FlippityFlap
 
 Simple Accordion
 
 ## Table of Contents
 
-- [Project Title](#project-title)
+- [FlippityFlap](#flippityflap)
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
   - [Technologies Used](#technologies-used)
