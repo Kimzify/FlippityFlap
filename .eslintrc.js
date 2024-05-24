@@ -5,6 +5,7 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:jsx-a11y/recommended",
+    "plugin:storybook/recommended"
   ],
   parserOptions: {
     ecmaVersion: 2020,
